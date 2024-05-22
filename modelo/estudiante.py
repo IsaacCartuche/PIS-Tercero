@@ -1,11 +1,11 @@
 from modelo.persona import Persona
-from controlador.tda.linked import linkedList
+from controlador.tda.linked.linkedList import Linked_List
 
 class Estudiante(Persona):
     def __init__(self):
         super().__init__()
         self.__matricula = None
-        self.__cursa = linkedList()
+        self.__cursa = Linked_List()
 
     @property
     def _cursa(self):

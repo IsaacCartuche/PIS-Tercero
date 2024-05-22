@@ -1,5 +1,6 @@
-from controls.tda.linked.node import Node
-from controls.exception.linkedListExeption import LinkedEmptyException, ArrayPositionException
+from controlador.tda.linked.node import Node
+from controlador.exception.arrayPositionException import ArrayPositionException
+from controlador.exception.linkedListExeption import LinkedEmptyException
 class Linked_List(object):
     def __init__(self):
         self.__head = None

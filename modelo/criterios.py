@@ -1,4 +1,4 @@
-from controlador.tda.linked import linkedList
+from controlador.tda.linked.linkedList import Linked_List
 from modelo.unidad import Unidad
 
 class Criterios:
@@ -9,7 +9,7 @@ class Criterios:
         self.__ponderaion = 0
         self.__total = 0
         self.__unidad = Unidad()
-        self.__nota = linkedList()
+        self.__nota = Linked_List()
 
     @property
     def _id(self):
