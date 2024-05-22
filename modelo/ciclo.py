@@ -1,10 +1,10 @@
-from controlador.tda.linked import linkedList
+from controlador.tda.linked.linkedList import Linked_List
 from modelo.mallaCurricular import MallaCurricular
 class Ciclo:
     def __init__(self):
         self.__id = 0
         self.__nombre = ''
-        self.__materia = linkedList()
+        self.__materia = Linked_List()
         self.__mallaCurricular = MallaCurricular()
 
     @property

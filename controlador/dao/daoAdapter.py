@@ -1,5 +1,5 @@
 from typing import TypeVar, Generic, Type
-from controls.tda.linked.linkedList import Linked_List
+from controlador.tda.linked.linkedList import Linked_List
 import os, json
 T = TypeVar("T")
 
