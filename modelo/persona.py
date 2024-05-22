@@ -67,3 +67,25 @@ class Persona:
         self.__direccion = value
 
         
+    @property
+    def serialize(self):
+        return{
+            'id': self._id,
+            'cedula': self._cedula,
+            'nombre': self._nombre,
+            'apellido': self._apellido,
+            'fechaNacimiento': self._fechaNacimiento,
+            'telefono': self._telefono,
+            'direccion': self._direccion
+        }
+
+    def deserializar(self, data):
+        persona = Persona()
+        persona._id = data['id']
+        persona._cedula = data['cedula']
+        persona._nombre = data['nombre']
+        persona._apellido = data['apellido']
+        persona._fechaNacimiento = data['fechaNacimiento']
+        persona._telefono = data['telefono']
+        persona._direccion = data['direccion']
+        return persona

@@ -34,6 +34,7 @@ class DaoAdapter(Generic[T]):
         aux = '['
         for i in range(0, self.lista._length):
             if i < self.lista._length -1:
+
                 aux += str(json.dumps(self.lista.get(i).serialize)) + ','
             else:
                 aux += str(json.dumps(self.lista.get(i).serialize))

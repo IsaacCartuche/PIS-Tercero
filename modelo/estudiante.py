@@ -22,3 +22,31 @@ class Estudiante(Persona):
     @_matricula.setter
     def _matricula(self, value):
         self.__matricula = value
+
+    @property
+    def serializer(self):
+        return{
+            'id': self._id,
+            'cedula': self._cedula,
+            'nombre': self._nombre,
+            'apellido': self._apellido,
+            'fechaNacimiento': self._fechaNacimiento,
+            'telefono': self._telefono,
+            'direccion': self._direccion,
+            'matricula': self._matricula,
+            'cursa': self._cursa
+        }
+    
+    def deserializar(self, data):
+        estudiante = Estudiante()
+        estudiante._id = data['id']
+        estudiante._cedula = data['cedula']
+        estudiante._nombre = data['nombre']
+        estudiante._apellido = data['apellido']
+        estudiante._fechaNacimiento = data['fechaNacimiento']
+        estudiante._telefono = data['telefono']
+        estudiante._direccion = data['direccion']
+        estudiante._matricula = data['matricula']
+        estudiante._cursa = data['cursa']
+        return estudiante
+    
