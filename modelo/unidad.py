@@ -1,5 +1,5 @@
 from modelo.asignacion import Asignacion
-from controlador.tda.linked import linkedList
+from controlador.tda.linked.linkedList import Linked_List
 from modelo.estadistica import Estadistica
 
 class Unidad:
@@ -7,7 +7,7 @@ class Unidad:
         self.__id = 0
         self.__promedio = 0
         self.__asignacion = Asignacion()
-        self.__criterios = linkedList()
+        self.__criterios = Linked_List()
         self.__estadistica = Estadistica()
 
     @property

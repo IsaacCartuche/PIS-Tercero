@@ -1,6 +1,6 @@
 from modelo.estudiante import Estudiante
 from modelo.periodo import Periodo
-from controlador.tda.linked import linkedList
+from controlador.tda.linked.linkedList import Linked_List
 
 class Cursa:
     def __init__(self):
@@ -8,7 +8,7 @@ class Cursa:
         self.__paralelo = ''
         self.__estudiante = Estudiante()
         self.__periodo = Periodo()
-        self.__asignacion = linkedList()
+        self.__asignacion = Linked_List()
 
     @property
     def _id(self):

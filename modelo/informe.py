@@ -1,10 +1,10 @@
-from controlador.tda.linked import linkedList
+from controlador.tda.linked.linkedList import Linked_List
 from modelo.proyecciones import Proyecciones
 class Informe:
     def __init__(self):
         self.__id = 0
         self.__descripcion = ''
-        self.__estadistica = linkedList()
+        self.__estadistica = Linked_List()
         self.__proyecciones = Proyecciones()
 
 
