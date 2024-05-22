@@ -1,13 +1,13 @@
 from modelo.cursa import Cursa
-from controlador.tda.linked import linkedList
+from controlador.tda.linked.linkedList import Linked_List
 
 class Asignacion:
     def __init__(self):
         self.__id = None
         self.__cedula = ''
         self.__cursa = Cursa()
-        self.__materia = linkedList()
-        self.__unidad = linkedList()
+        self.__materia = Linked_List()
+        self.__unidad = Linked_List()
 
     @property
     def _materia(self):
