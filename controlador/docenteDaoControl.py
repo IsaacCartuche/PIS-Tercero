@@ -22,8 +22,12 @@ class DocenteDaoControl(DaoAdapter):
     
     @property
     def save(self):
-        self._docente._id = self._lista._length + 1
-        self._save(self._docente) 
+        lista = self._lista
+        self._docente._id = lista._length + 1
+        self._save(self._docente)
     
     def merge(self, pos):
         self._merge(self._docente, pos)
+    
+    def delete(self, pos):
+        self._delete(self._docente, pos)

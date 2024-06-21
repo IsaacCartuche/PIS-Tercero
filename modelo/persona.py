@@ -1,14 +1,13 @@
 from modelo.cuenta import Cuenta
-from datetime import date
+
 class Persona:
     def __init__(self):
-        self.__id = None
-        self.__cedula = ''
+        self.__id = 0
+        self.__tipoIdentificacion = ''
+        self.__identificacion = ''
         self.__nombre = ''
         self.__apellido = ''
-        self.__fechaNacimiento = date
         self.__telefono = ''
-        self.__direccion = ''
 
     @property
     def _id(self):
@@ -19,12 +18,20 @@ class Persona:
         self.__id = value
 
     @property
-    def _cedula(self):
-        return self.__cedula
+    def _tipoIdentificacion(self):
+        return self.__tipoIdentificacion
 
-    @_cedula.setter
-    def _cedula(self, value):
-        self.__cedula = value
+    @_tipoIdentificacion.setter
+    def _tipoIdentificacion(self, value):
+        self.__tipoIdentificacion = value
+
+    @property
+    def _identificacion(self):
+        return self.__identificacion
+
+    @_identificacion.setter
+    def _identificacion(self, value):
+        self.__identificacion = value
 
     @property
     def _nombre(self):
@@ -43,14 +50,6 @@ class Persona:
         self.__apellido = value
 
     @property
-    def _fechaNacimiento(self):
-        return self.__fechaNacimiento
-
-    @_fechaNacimiento.setter
-    def _fechaNacimiento(self, value):
-        self.__fechaNacimiento = value
-
-    @property
     def _telefono(self):
         return self.__telefono
 
@@ -58,34 +57,26 @@ class Persona:
     def _telefono(self, value):
         self.__telefono = value
 
-    @property
-    def _direccion(self):
-        return self.__direccion
 
-    @_direccion.setter
-    def _direccion(self, value):
-        self.__direccion = value
 
         
     @property
     def serialize(self):
         return{
             'id': self._id,
-            'cedula': self._cedula,
+            'tipoIdentificacion': self._tipoIdentificacion,
+            'identificacion': self._identificacion,
             'nombre': self._nombre,
             'apellido': self._apellido,
-            'fechaNacimiento': self._fechaNacimiento,
-            'telefono': self._telefono,
-            'direccion': self._direccion
+            'telefono': self._telefono
         }
 
     def deserializar(self, data):
         persona = Persona()
         persona._id = data['id']
-        persona._cedula = data['cedula']
+        persona._tipoIdentificacion = data['tipoIdentificacion']
+        persona._identificacion = data['identificacion']
         persona._nombre = data['nombre']
         persona._apellido = data['apellido']
-        persona._fechaNacimiento = data['fechaNacimiento']
         persona._telefono = data['telefono']
-        persona._direccion = data['direccion']
         return persona

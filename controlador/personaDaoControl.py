@@ -22,8 +22,12 @@ class PersonaDaoControl(DaoAdapter):
     
     @property
     def save(self):
-        self._persona._id = self._lista._length + 1
-        self._save(self._persona) 
+        lista = self._lista
+        self._persona._id = lista._length + 1
+        self._save(self._persona)
     
     def merge(self, pos):
         self._merge(self._persona, pos)
+    
+    def delete(self, pos):
+        self._delete(self._persona, pos)

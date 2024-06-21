@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "tipoIdentificacion": "CEDULA",
+        "identificacion": "1105526438",
+        "nombre": "Juan",
+        "apellido": "Perez",
+        "telefono": "0987654321",
+        "especialidad": "Matematicas",
+        "aniosExperienciaDocente": 10,
+        "cubiculo": "A1"
+    },
+    {
+        "id": 2,
+        "tipoIdentificacion": "CEDULA",
+        "identificacion": "1105526439",
+        "nombre": "Anthony",
+        "apellido": "Gutierrez",
+        "telefono": "0987654321",
+        "especialidad": "Matematicas",
+        "aniosExperienciaDocente": 10,
+        "cubiculo": "A1"
+    }
+]
