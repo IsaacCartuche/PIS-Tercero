@@ -17,7 +17,7 @@ def login():
 
 @router.route('/cerrarSesion')
 def cerrarSesion():
-    return redirect(url_for('index'))
+    return redirect(url_for('api.home'))
 
 
 @router.route('/usuario_login', methods=['POST'])
@@ -49,8 +49,8 @@ def verAlumnos_ciclo():
     lista_estudiante = lista_estudiante.toArray 
     lista_filtrada=[]
     for estudiante in lista_estudiante:
-        print(estudiante.ciclo)
-        if estudiante.ciclo == int(ciclo):
+        print(estudiante._ciclo)
+        if estudiante._ciclo == int(ciclo):
             lista_filtrada.append(estudiante)
     
     return render_template('listaEstudiantes.html',lista_estudiantes=lista_filtrada)
