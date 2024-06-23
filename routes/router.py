@@ -27,7 +27,6 @@ def usuario_login():
     lista_docente=lista_docente.toArray
     email= request.form.get('email')
     password=request.form.get('password')
-
     password_="12345678"
     lista_cursos=[]
     d= Docente()
@@ -36,7 +35,7 @@ def usuario_login():
             d._nombre = docente._nombre
             d._apellido= docente._apellido
             for doc in lista_docente:
-                if doc.correo==email:
+                if doc._correo==email:
                     lista_cursos.append([doc._materia,doc._ciclo])
             return render_template('docente.html',lista_cursos=lista_cursos,docente=d)
 
