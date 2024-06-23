@@ -1,5 +1,6 @@
 import sys
 sys.path.append('../')
+<<<<<<< HEAD
 
 
 from controlador.estudianteDaoControl import EstudianteControl
@@ -50,3 +51,13 @@ try:
 
 except Exception as e:
     print(e)
+=======
+ 
+from controlador.cursaDaoControl import CursaDaoControl
+from controlador.periodoDaoControl import PeriodoDaoControl
+
+#pc. = PeriodoDaoControl()
+#ec = EstudianteDaoControl()
+#cc = CursaDaoControl()
+ 
+>>>>>>> origin/Anthony

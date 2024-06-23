@@ -49,3 +49,21 @@ class Cursa:
     @_asignacion.setter
     def _asignacion(self, value):
         self.__asignacion = value
+
+    @property
+    def serialize(self):
+        return {
+            "id": self._id,
+            "paralelo": self._paralelo,
+            "estudiante": self._estudiante.serialize,
+            "periodo": self._periodo.serialize,
+            "asignacion": self.__asignacion.serialize
+        }
+    def deserializar(self, data):
+        cursa= Cursa()
+        self._id = data['id']
+        self._paralelo = data['paralelo']
+        self._estudiante = data['estudiante']
+        self._periodo = data['periodo']
+        self._asignacion = data['asignacion']
+        return self
