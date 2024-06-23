@@ -23,7 +23,7 @@ def cerrarSesion():
 @router.route('/usuario_login', methods=['POST'])
 def usuario_login():
     dao_docente=DocenteDaoControl()
-    lista_docente=dao_docente._lista
+    lista_docente= dao_docente._lista
     lista_docente=lista_docente.toArray
     email= request.form.get('email')
     password=request.form.get('password')
@@ -32,12 +32,12 @@ def usuario_login():
     lista_cursos=[]
     d= Docente()
     for docente in lista_docente:
-        if docente.correo == email  and password==password_:
-            d.nombre= docente.nombre
-            d.apellido= docente.apellido
+        if docente._correo == email  and password==password_:
+            d._nombre = docente._nombre
+            d._apellido= docente._apellido
             for doc in lista_docente:
                 if doc.correo==email:
-                    lista_cursos.append([doc.materia,doc.ciclo])
+                    lista_cursos.append([doc._materia,doc._ciclo])
             return render_template('docente.html',lista_cursos=lista_cursos,docente=d)
 
     return redirect(url_for('login'))
