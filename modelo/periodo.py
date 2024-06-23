@@ -48,4 +48,20 @@ class Periodo:
     def _cursa(self, value):
         self.__cursa = value
 
-        
+    @property
+    def serialize(self):
+        return {
+            "id": self._id,
+            "fechaInicio": self._fechaInicio,
+            "fechaFin": self._fechaFin,
+            "estadoActivo": self._estadoActivo,
+            "cursa": self._cursa.serialize
+        }
+    def deserializar(self, data):
+        periodo= Periodo()
+        periodo._id = data['id']
+        periodo._fechaInicio = data['fechaInicio']
+        periodo._fechaFin = data['fechaFin']
+        periodo._estadoActivo = data['estadoActivo']
+        periodo._cursa = data['cursa']
+        return periodo
