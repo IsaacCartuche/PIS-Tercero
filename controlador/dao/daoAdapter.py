@@ -17,13 +17,12 @@ class DaoAdapter(Generic[T]):
     
     def _list(self) -> T:        
         if os.path.isfile(self.URL + self.file):
-            f = open(self.URL + self.file, "r")
-            datos = json.load(f)
-            self.lista.clear
-            for data in datos:
-                a = self.atype().deserializar(data)
-                self.lista.add(a, self.lista._length)
-            f.close()
+            with open(self.URL + self.file, "r", encoding="utf-8") as f: 
+                datos = json.load(f)
+                self.lista.clear
+                for data in datos:
+                    a = self.atype().deserializar(data)
+                    self.lista.add(a, self.lista._length)
         return self.lista
     
     
