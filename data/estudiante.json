@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "tipoIdentificacion": "CEDULA",
+        "identificacion": "1105526436",
+        "nombre": "Juan",
+        "apellido": "Perez",
+        "telefono": "0987654321",
+        "matricula": 1,
+        "fechaNacimiento": "2000-01-01"
+    },
+    {
+        "id": 2,
+        "tipoIdentificacion": "CEDULA",
+        "identificacion": "1105526437",
+        "nombre": "Anthony",
+        "apellido": "Gutierrez",
+        "telefono": "0987654321",
+        "matricula": 2,
+        "fechaNacimiento": "2000-01-01"
+    }
+]
