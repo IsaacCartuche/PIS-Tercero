@@ -14,6 +14,13 @@ def home():
 def login():
     return render_template('login.html')
 
+@router.route('/informativa')
+def informativa():
+    return render_template('404.html')
+
+@router.route('/sugerencias')
+def sugerencias():
+    return render_template('contact.html')
 
 @router.route('/cerrarSesion')
 def cerrarSesion():
