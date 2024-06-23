@@ -40,9 +40,12 @@ class Estudiante(Persona):
             'id': self._id,
             'tipoIdentificacion': self._tipoIdentificacion,
             'identificacion': self._identificacion,
+            'correo': self._correo,
             'nombre': self._nombre,
             'apellido': self._apellido,
             'telefono': self._telefono,
+            'ciclo': self._ciclo,
+            'paralelo': self._paralelo,
             'matricula': self._matricula,
             'fechaNacimiento': self._fechaNacimiento,
             #'cursa': self._cursa
@@ -53,9 +56,12 @@ class Estudiante(Persona):
         estudiante._id = data['id']
         estudiante._tipoIdentificacion = data['tipoIdentificacion']
         estudiante._identificacion = data['identificacion']
+        estudiante._correo = data['correo']
         estudiante._nombre = data['nombre']
         estudiante._apellido = data['apellido']
         estudiante._telefono = data['telefono']
+        estudiante._ciclo = data['ciclo']
+        estudiante._paralelo = data['paralelo']
         estudiante._matricula = data['matricula']
         estudiante._fechaNacimiento = data['fechaNacimiento']
         #estudiante._cursa = data['cursa']
