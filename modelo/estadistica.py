@@ -38,3 +38,12 @@ class Estadistica:
     @_informe.setter
     def _informe(self, value):
         self.__informe = value
+
+    def serealizar(self):
+        return {
+            "id": self.__id,
+            "titulo": self.__titulo,
+            "unidad": self.__unidad,
+            "informe": self.__informe
+        }
+    
