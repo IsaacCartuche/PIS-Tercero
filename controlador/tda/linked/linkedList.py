@@ -6,8 +6,6 @@ class Linked_List(object):
         self.__head = None
         self.__last = None
         self.__length = 0
-        
-
 
     @property
     def _length(self):
@@ -16,7 +14,6 @@ class Linked_List(object):
     @_length.setter
     def _length(self, value):
         self.__length = value
-
 
     @property
     def isEmpty(self):
@@ -42,11 +39,6 @@ class Linked_List(object):
                 self.__last = node
                 self.__length += 1
 
-    """ def __addIntermed__(self, data, pos):
-            self.getNode(pos-1)._next = Node(data, self.getNode(pos))
-            self.__length += 1 """
-
-                
     def edit(self, data, pos=0):
         if pos == 0:
             self.__head._data = data
@@ -54,8 +46,7 @@ class Linked_List(object):
             self.__last._data = data
         else:
             self.getNode(pos)._data = data
-                   
-    
+
     def getNode(self, pos):
         if self.isEmpty:
             raise LinkedEmptyException("List is Empty")
@@ -74,7 +65,10 @@ class Linked_List(object):
             return node
         
     def get(self, pos):
-        return self.getNode(pos)._data
+        try:
+            return self.getNode(pos)._data
+        except Exception as error:
+            return None
         
 
     def add(self, data, pos):
@@ -88,43 +82,50 @@ class Linked_List(object):
             node_preview._next = Node(data, node_last)
             self.__length += 1
     
-    
     @property
     def clear(self):
         self.__head = None
         self.__last = None
         self.__length = 0
-
-
-    @property    
-    def toArray(self):
-        out = []
+    
+    def delete(self, pos = 0):
         if self.isEmpty:
-            out = "List is Empty"
+            raise LinkedEmptyException("List empty")
+        elif pos < 0 or pos >= self.__length:
+            raise ArrayPositionException("Position out range")
+        elif pos == 0:
+            return self.deleteFirst()
+        elif pos == (self.__length - 1):
+            return self.deleteLast()
         else:
-            node = self.__head
-            while node!= None:
-                out.append(node._data.__name)
-                node = node._next
-
-        return out
+            preview = self.getNode(pos - 1)
+            actually = self.getNode(pos)
+            element = preview._data
+            next = actually._next
+            actually = None
+            preview._next = next
+            self._length = self._length - 1
+            return element
     
-
-    
-
-
-
-    
-    
-        
-    
-    
-    def detele(self, pos=0):
-        #TODO
-        pass
-
-    
-
+    def detele(self, pos):
+        pos = pos 
+        if self.isEmpty:
+            raise LinkedEmptyException("List is Empty")
+        elif pos < 0 or pos >= self._length:
+            raise ArrayPositionException("Position is out of range")
+        elif pos == 0:
+            self._head = self.__head._next
+            self.__length -= 1 
+        elif pos == self._length -1:
+            self.__last = self.getNode(pos-1)
+            self.__length -= 1
+        else:
+            node_preview = self.getNode(pos-1)
+            node_last = node_preview._next._next
+            node_preview._next = node_last
+            self.__length -= 1
+        for i in range(pos, self._length):
+            self.getNode(i)._data._id = i+1
         
     
     def __str__(self) -> str:
@@ -135,7 +136,22 @@ class Linked_List(object):
             node = self.__head
             while node!= None:
                 out += str(node._data) +'\t'
-                node = node._next
-            
-
+                node = node._next   
         return out
+    
+    @property
+    def toArray(self):
+        array = []
+        if not self.isEmpty:
+            node = self.__head
+            cont = 0
+            while cont < self._length:
+                array.append(node._data)
+                cont += 1
+                node = node._next
+        return array
+    
+    def toList(self, array):
+        self.clear
+        for i in range(0, len(array)):
+            self.__addLast__(array[i])
