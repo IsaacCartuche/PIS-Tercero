@@ -38,14 +38,14 @@ class Estudiante(Persona):
     def serializer(self):
         return{
             'id': self._id,
-            'tipoIdentificacion': self._tipoIdentificacion,
-            'identificacion': self._identificacion,
-            'correo': self._correo,
             'nombre': self._nombre,
             'apellido': self._apellido,
-            'telefono': self._telefono,
+            'correo': self._correo,
             'ciclo': self._ciclo,
             'paralelo': self._paralelo,
+            'tipoIdentificacion': self._tipoIdentificacion,
+            'identificacion': self._identificacion,
+            'telefono': self._telefono,
             'matricula': self._matricula,
             'fechaNacimiento': self._fechaNacimiento,
             #'cursa': self._cursa
@@ -54,14 +54,14 @@ class Estudiante(Persona):
     def deserializar(self, data):
         estudiante = Estudiante()
         estudiante._id = data['id']
-        estudiante._tipoIdentificacion = data['tipoIdentificacion']
-        estudiante._identificacion = data['identificacion']
-        estudiante._correo = data['Correo']
         estudiante._nombre = data['Nombre']
         estudiante._apellido = data['Apellido']
-        estudiante._telefono = data['telefono']
+        estudiante._correo = data['Correo']
         estudiante._ciclo = data['Ciclo']
         estudiante._paralelo = data['Paralelo']
+        estudiante._tipoIdentificacion = data['tipoIdentificacion']
+        estudiante._identificacion = data['identificacion']
+        estudiante._telefono = data['telefono']
         estudiante._matricula = data['matricula']
         estudiante._fechaNacimiento = data['fechaNacimiento']
         #estudiante._cursa = data['cursa']
