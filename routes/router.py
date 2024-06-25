@@ -2,8 +2,9 @@ from flask import Blueprint, jsonify, make_response, request, render_template, r
 from controlador.estudianteDaoControl import EstudianteControl
 from controlador.docenteDaoControl import DocenteDaoControl, Docente
 #import json
-
+import os, openpyxl
 router = Blueprint('api', __name__)
+
 
 @router.route('/')
 def home():
@@ -54,3 +55,25 @@ def verAlumnos_ciclo():
             lista_filtrada.append(estudiante)
     
     return render_template('listaEstudiantes.html',lista_estudiantes=lista_filtrada)
+
+
+@router.route('/subir_notas')
+def subir_notas():
+    
+    return render_template('agregarArchivos.html')
+
+@router.route('/upload', methods=['POST'])
+def upload():
+    file = request.files["uploadFile"]
+    print(file)
+    file.save(file.filename)
+    excel_dataframe = openpyxl.load_workbook("notasPrueba.xlsx")
+    dataframe = excel_dataframe.active
+    data = []
+    for row in range(1, dataframe.max_row):
+        _row = [row,]
+        for col in dataframe.iter_cols(1, dataframe.max_column):
+            print(col[row].value)
+            _row.append(col[row].value)
+        data.append(_row)
+    return 's'
