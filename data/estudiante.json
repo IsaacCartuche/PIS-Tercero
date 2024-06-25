@@ -1209,19 +1209,6 @@
         "fechaNacimiento": "2000-01-01"
     },
     {
-        "Nombre": "NATHALY SILVANA",
-        "Apellido": "ANGAMARCA ANGAMARCA",
-        "Correo": "nathaly.angamarca@unl.edu.ec",
-        "Ciclo": 3,
-        "Paralelo": "A",
-        "id": 1,
-        "tipoIdentificacion": "CEDULA",
-        "identificacion": "1105526436",
-        "telefono": "0987654321",
-        "matricula": 1,
-        "fechaNacimiento": "2000-01-01"
-    },
-    {
         "Nombre": "LEONARDO SEBASTIAN",
         "Apellido": "AREVALO ARMIJOS",
         "Correo": "leonardo.arevalo@unl.edu.ec",

@@ -45,8 +45,7 @@ def usuario_login():
                 if doc._correo==email:
                     lista_cursos.append([doc._materia,doc._ciclo])
             return render_template('docente.html',lista_cursos=lista_cursos,docente=d)
-
-    return redirect(url_for('login'))
+    return redirect(url_for('api.login'))
 
 @router.route('/verAlumnos_ciclo')
 def verAlumnos_ciclo():
@@ -56,7 +55,7 @@ def verAlumnos_ciclo():
     lista_estudiante = lista_estudiante.toArray 
     lista_filtrada=[]
     for estudiante in lista_estudiante:
-        print(estudiante._ciclo)
+        #print(estudiante._ciclo)
         if estudiante._ciclo == int(ciclo):
             lista_filtrada.append(estudiante)
     
