@@ -2,9 +2,8 @@ from typing import TypeVar, Generic, Type
 from controlador.dao.daoAdapter import DaoAdapter
 from modelo.cursa import Cursa
 from controlador.tda.linked.linkedList import Linked_List
-from json.os import json
 
-Class CursaDaoControl(DaoAdapter):
+class CursaDaoControl(DaoAdapter):
     def __init__(self):
         super().__init__(Cursa)
         self._cursa = None# Carga los datos del archivo en la lista enlazada
@@ -23,13 +22,12 @@ Class CursaDaoControl(DaoAdapter):
     @property
     def list(self):
         return self._cursa
- 
+
     @property
     def save(self):
-        self._cursa._id = self._cursa._id + 1
-        print("cursaaa")
-        print(self._cursa.serialize)
-        self._cursa.save(self._cursa.serialize)
+        lista = self._lista
+        self._cursa._id = lista._length + 1
+        self._save(self._cursa)
 
-    def marge (self, pos):
-        self._cursa.marge(self.__cursa,pos)   
+    def merge(self, pos):
+        self._merge(self._cursa,pos)   

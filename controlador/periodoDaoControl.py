@@ -1,6 +1,6 @@
 from typing import Type
 from controlador.dao.daoAdapter import DaoAdapter
-from models.periodo import Periodo
+from modelo.periodo import Periodo
 
 class PeriodoDaoControl(DaoAdapter):
     def __init__(self):

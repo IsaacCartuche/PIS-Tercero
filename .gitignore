@@ -14,3 +14,5 @@ controlador/tda/linked/__pycache__/
 modelo/__pycache__/
 
 routes/__pycache__/
+
+*.pyc
