@@ -44,34 +44,34 @@ class Docente(Persona):
     def serializer(self):
         return{
             'id': self._id,
-            'tipoIdentificacion': self._tipoIdentificacion,
-            'identificacion': self._identificacion,
-            'correo': self._correo,
             'nombre': self._nombre,
             'apellido': self._apellido,
-            'telefono': self._telefono,
+            'correo': self._correo,
+            'materia': self._materia,
             'ciclo': self._ciclo,
             'paralelo': self._paralelo,
+            'tipoIdentificacion': self._tipoIdentificacion,
+            'identificacion': self._identificacion,
+            'telefono': self._telefono,
             'especialidad': self._especialidad,
             'aniosExperienciaDocente': self._aniosExperienciaDocente,
-            'cubiculo': self._cubiculo,
-            'materia': self._materia
+            'cubiculo': self._cubiculo
         }
     
     def deserializar(self, data):
         docente = Docente()
         docente._id = data['id']
-        docente._tipoIdentificacion = data['tipoIdentificacion']
-        docente._identificacion = data['identificacion']
-        docente._correo = data['Correo']
         docente._nombre = data['Nombre']
         docente._apellido = data['Apellido']
-        docente._telefono = data['telefono']
+        docente._correo = data['Correo']
+        docente._materia = data['Materia']
         docente._ciclo = data['Ciclo']
         docente._paralelo = data['Paralelo']
+        docente._tipoIdentificacion = data['tipoIdentificacion']
+        docente._identificacion = data['identificacion']
+        docente._telefono = data['telefono']
         docente._especialidad = data['especialidad']
         docente._aniosExperienciaDocente = data['aniosExperienciaDocente']
         docente._cubiculo = data['cubiculo']
-        docente._materia = data['Materia']
         return docente
     
