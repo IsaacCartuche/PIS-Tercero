@@ -4,7 +4,7 @@ from modelo.cursa import Cursa
 from controlador.tda.linked.linkedList import Linked_List
 from json.os import json
 
-Class CursaDaoControl(DaoAdapter):
+class CursaDaoControl(DaoAdapter):
     def __init__(self):
         super().__init__(Cursa)
         self._cursa = None# Carga los datos del archivo en la lista enlazada
@@ -31,5 +31,5 @@ Class CursaDaoControl(DaoAdapter):
         print(self._cursa.serialize)
         self._cursa.save(self._cursa.serialize)
 
-    def marge (self, pos):
-        self._cursa.marge(self.__cursa,pos)   
+    def merge (self, pos):
+        self._cursa.merge(self.__cursa,pos)   
